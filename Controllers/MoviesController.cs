@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TestApplication.Models;
+using TestApplication.ViewModels;
 
 namespace TestApplication.Controllers
 {
@@ -13,9 +14,19 @@ namespace TestApplication.Controllers
         public ActionResult Random()
         {
             var movie = new Movie() { Name = "Shrek"};
+            var customers = new List<Customer>
+            {
+                new Customer {Name = "Customer 1"},
+                new Customer {Name = "Customer 2"}
+            };
 
-            var viewResult = new ViewResult();
-            return View(movie);
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
+
+            return View(viewModel);
             //return Content("Hello World");
             //return HttpNotFound();
             //return new EmptyResult();
