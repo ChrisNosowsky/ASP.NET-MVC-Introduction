@@ -13,11 +13,13 @@ namespace TestApplication.Controllers
         public ActionResult Random()
         {
             var movie = new Movie() { Name = "Shrek"};
-            //return View(movie);
+
+            var viewResult = new ViewResult();
+            return View(movie);
             //return Content("Hello World");
             //return HttpNotFound();
             //return new EmptyResult();
-            return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });
+            //return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });
         }
 
         public ActionResult Edit(int id)
