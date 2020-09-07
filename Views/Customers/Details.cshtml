@@ -1,0 +1,14 @@
+﻿@model TestApplication.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@foreach (var customer in Model.Customers)
+{
+    if (customer.Id.ToString() == (string) Url.RequestContext.RouteData.Values["id"])
+    {
+        <h1>@customer.Name</h1>
+    }
+}

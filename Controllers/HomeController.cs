@@ -26,5 +26,15 @@ namespace TestApplication.Controllers
 
             return View();
         }
+
+        public ActionResult LogIn()
+        {
+            return Content("Your Login Page");
+        }
+
+        public ActionResult Register()
+        {
+            return Content("Your Register Page");
+        }
     }
 }
